@@ -321,13 +321,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923217917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.8246863, y: -0.1347508, z: 0.22097398, w: 0.5028969}
+  m_LocalRotation: {x: 0.9579621, y: -0.033166636, z: 0.2566851, w: 0.12377957}
   m_LocalPosition: {x: 4.32, y: 5.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 117.25, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 165.275, y: -30, z: 0}
 --- !u!114 &923217920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469593019475173600, guid: c9dfb669e0973a84f9ced60ce3e2a463, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.11626
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 2469593019475173600, guid: c9dfb669e0973a84f9ced60ce3e2a463, type: 3}
       propertyPath: m_LocalPosition.z
@@ -748,8 +748,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 194157846727869895, guid: c9dfb669e0973a84f9ced60ce3e2a463, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6521919257255459135}
   m_SourcePrefab: {fileID: 100100000, guid: c9dfb669e0973a84f9ced60ce3e2a463, type: 3}
+--- !u!1 &6521919257255459134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 194157846727869895, guid: c9dfb669e0973a84f9ced60ce3e2a463, type: 3}
+  m_PrefabInstance: {fileID: 6521919257255459133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6521919257255459135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6521919257255459134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c66ffdc47a7664c9c9bf4d7e931705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleFirstPersonControllerr
+  speed: 5
+  sprintMultiplier: 1.5
+  cameraTransform: {fileID: 0}
+  lookSensitivity: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
