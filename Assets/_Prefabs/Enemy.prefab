@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 7386287486059491038}
   - component: {fileID: 3236125012422955025}
   - component: {fileID: 5877106162374533487}
+  - component: {fileID: 4208331762558208072}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -220,25 +221,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
   muzzle: {fileID: 7421422819964020398}
-  range: 50
-  bulletDamage: 10
-  clipSize: 20
-  fireRate: 3
-  reloadTime: 3
+  currentWeapon: {fileID: 0}
+  bulletsLeft: 0
   detectionRadius: 50
   scanFrequency: 0.25
   spotReactionTime: 0.15
   engageDistance: 50
   rotationSpeed: 10
+  weaponHolderTransform: {fileID: 0}
   weaponPitchSpeed: 10
   minWeaponPitch: -45
   maxWeaponPitch: 60
   velocityLerp: 0.4
   maxLeadTime: 1.25
   aimHeightFallback: 1.2
-  bulletSpeed: 20
-  bulletPrefab: {fileID: 8049794033364714992, guid: 72705e583e5fa714092a420bed590899, type: 3}
-  weaponHolderTransform: {fileID: 0}
 --- !u!114 &5877106162374533487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +250,22 @@ MonoBehaviour:
   maxHealth: 100
   team: 2
   destroyOnDeath: 1
+--- !u!114 &4208331762558208072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841211347279139176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfc3b2b54a74ff4db56188474db1c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity
+  m_Entity: {fileID: 11400000, guid: 4f308783b0d960543aaf4adf92308487, type: 2}
+  m_Health: {fileID: 5877106162374533487}
+  m_Shooter: {fileID: 3236125012422955025}
+  m_Renderer: {fileID: 2083382966612639370}
 --- !u!1 &2663182764912402711
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,11 +513,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8009511162572624031}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.7933533, z: -0, w: 0.60876155}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.72510695, y: 0.78786, z: 1.1886444}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2911817782726030791}
   m_Father: {fileID: 6854039308093354528}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -105, z: 0}
