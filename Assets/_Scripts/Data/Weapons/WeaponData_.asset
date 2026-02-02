@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponId: weapon_id
   displayName: Weapon
-  bulletPattern: 0
+  bulletPattern: 2
   shootingBehavior: 0
   range: 50
   bulletDamage: 10
@@ -22,7 +22,7 @@ MonoBehaviour:
   fireRate: 5
   reloadTime: 1.2
   bulletPrefab: {fileID: 8049794033364714992, guid: 72705e583e5fa714092a420bed590899, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 10
   pellets: 8
   spreadAngle: 6
   useBallisticAim: 1

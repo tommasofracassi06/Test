@@ -4,6 +4,7 @@ public class Entity : MonoBehaviour
 {
     [SerializeField] EntityDataSO m_Entity;
     [SerializeField] Health m_Health;
+    public Health EntityHealth => m_Health;
     [SerializeField] Shooter m_Shooter;
     [SerializeField] MeshRenderer m_Renderer;
 

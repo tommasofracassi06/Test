@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6247c2a8e19c447b136e26aeeb094a, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  weaponId: weapon_id
+  displayName: Weapon
+  bulletPattern: 2
+  shootingBehavior: 0
+  range: 50
+  bulletDamage: 10
+  clipSize: 12
+  fireRate: 5
+  reloadTime: 1.2
+  bulletPrefab: {fileID: 8049794033364714992, guid: 72705e583e5fa714092a420bed590899, type: 3}
+  bulletSpeed: 10
+  tracerPrefab: {fileID: 2698223610239041926, guid: fa17260588c874f44ac351e9a0c5cc6c, type: 3}
+  tracerColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  tracerLifetime: 0.4
+  weaponModel: {fileID: 1236257789494122, guid: 8b0b86b42def11849a8eba21f4a6a684, type: 3}
+  pellets: 8
+  spreadAngle: 6
+  useBallisticAim: 1
+  gravityMultiplier: 1

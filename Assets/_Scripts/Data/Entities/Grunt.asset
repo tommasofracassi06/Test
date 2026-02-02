@@ -19,4 +19,4 @@ MonoBehaviour:
   size: 1
   speed: 5
   engageDistance: 50
-  weapon: {fileID: 11400000, guid: 8fc0518608f6d854490045d1d053f3db, type: 2}
+  weapon: {fileID: 11400000, guid: 29979db53360afe4e9c0dc05f5b3b8d2, type: 2}
