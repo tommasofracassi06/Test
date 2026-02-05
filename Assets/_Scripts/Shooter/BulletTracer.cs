@@ -7,7 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(TrailRenderer))]
 public class BulletTracer : MonoBehaviour
 {
-
     [SerializeField] private TrailRenderer trailRenderer;
     private float lifetime = 0.2f;
     private float spawnTime;
@@ -16,7 +15,6 @@ public class BulletTracer : MonoBehaviour
     private Vector3 endPos;
     private float travelTime = 0.05f; // Tempo per viaggiare da start a end (molto veloce)
     private bool isMoving = false;
-
 
     /// <summary>
     /// Inizializza il tracer con posizione iniziale, finale e durata.
@@ -58,7 +56,7 @@ public class BulletTracer : MonoBehaviour
         // Auto-distruzione dopo il lifetime
         if (Time.time >= spawnTime + lifetime)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

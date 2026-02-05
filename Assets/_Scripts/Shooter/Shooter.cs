@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Shooter : MonoBehaviour
@@ -11,6 +12,7 @@ public abstract class Shooter : MonoBehaviour
     [SerializeField] protected Transform weaponHolderTransform;
 
     [SerializeField] protected int bulletsLeft;
+    [SerializeField] protected int bulletPoolSize = 30;
 
     protected bool readyToShoot;
     protected bool reloading;
@@ -30,10 +32,13 @@ public abstract class Shooter : MonoBehaviour
     {
         currentWeapon = weapon;
 
-        if (refillAmmo)
-        bulletsLeft = currentWeapon.clipSize;
+        //if (currentWeapon == null)
+        //    return;
 
-        if(weaponHolderTransform.childCount > 1)
+        if (refillAmmo)
+            bulletsLeft = currentWeapon.clipSize;
+
+        if (weaponHolderTransform.childCount > 1)
         {
             Destroy(weaponHolderTransform.GetChild(1).gameObject);
         }
@@ -135,6 +140,40 @@ public abstract class Shooter : MonoBehaviour
         Vector3 dir = (aimPoint - muzzle.position);
         return dir.sqrMagnitude > 0.0001f ? dir.normalized : muzzle.forward;
     }
+
+    #region POOLING
+    //POOLING
+    protected Dictionary<GameObject, Queue<GameObject>> bulletPools = new();
+    protected void EnsurePoolFor(GameObject prefab)
+    {
+        if (prefab == null || bulletPools.ContainsKey(prefab)) return;
+
+        Queue<GameObject> q = new Queue<GameObject>(Mathf.Max(1, bulletPoolSize));
+        for (int i = 0; i < Mathf.Max(1, bulletPoolSize); i++)
+        {
+            var go = Instantiate(prefab);
+            go.SetActive(false);
+            q.Enqueue(go);
+        }
+        bulletPools[prefab] = q;
+    }
+
+    protected GameObject TakeFromQueue(GameObject prefab)
+    {
+        var q = bulletPools[prefab];
+        var go = q.Dequeue();
+
+        if (go.activeSelf)
+        {
+            // riciclo forzato
+            go.SetActive(false);
+        }
+
+        q.Enqueue(go);
+        return go;
+    }
+
+    #endregion
 
     /// <summary>
     /// “Sparo elementare”: 1 pellet/raycast o 1 proiettile. Implementato dalle classi figlie.
