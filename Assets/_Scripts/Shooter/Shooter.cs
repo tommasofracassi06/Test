@@ -25,7 +25,7 @@ public abstract class Shooter : MonoBehaviour
         readyToShoot = true;
 
         if (currentWeapon != null)
-            bulletsLeft = currentWeapon.clipSize;
+            EquipWeapon(currentWeapon);
     }
 
     public virtual void EquipWeapon(WeaponData weapon, bool refillAmmo = true)
